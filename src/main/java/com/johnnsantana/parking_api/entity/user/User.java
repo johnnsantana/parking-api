@@ -1,4 +1,4 @@
-package com.johnnsantana.parking_api.entity;
+package com.johnnsantana.parking_api.entity.user;
 
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedBy;
@@ -26,7 +26,7 @@ public class User implements Serializable {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false, length = 25)
-    private Role role;
+    private RoleUser role;
 
     @CreatedDate
     @Column(name = "created_at", nullable = false)
@@ -52,7 +52,7 @@ public class User implements Serializable {
         Long id,
         String username,
         String password,
-        Role role,
+        RoleUser role,
         LocalDateTime createdAt,
         LocalDateTime updatedAt,
         String createdBy,
@@ -68,10 +68,6 @@ public class User implements Serializable {
         this.modifiedBy = modifiedBy;
     }
 
-    public enum Role {
-        ROLE_ADMIN, ROLE_CLIENT
-    }
-
     public Long getId() {
         return id;
     }
@@ -84,11 +80,11 @@ public class User implements Serializable {
         this.username = username;
     }
 
-    public Role getRole() {
+    public RoleUser getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(RoleUser role) {
         this.role = role;
     }
 
