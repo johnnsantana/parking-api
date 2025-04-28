@@ -22,8 +22,10 @@ public class UsersTest {
         final var modifiedBy = "aAdmin";
 
         final var actualUser = new User(1L, username, password, admin, createdAt, updatedAt, createdBy, modifiedBy);
+        final var actualUserRoleClient = new User(1L, username, password, client, createdAt, updatedAt, createdBy, modifiedBy);
 
         Assertions.assertNotNull(actualUser);
+        Assertions.assertNotNull(actualUserRoleClient);
         Assertions.assertNotNull(actualUser.getId());
 
         Assertions.assertEquals(username, actualUser.getUsername());
@@ -36,7 +38,8 @@ public class UsersTest {
         Assertions.assertEquals(createdBy, actualUser.getCreatedBy());
         Assertions.assertEquals(modifiedBy, actualUser.getModifiedBy());
 
-
     }
+
+
 
 }
