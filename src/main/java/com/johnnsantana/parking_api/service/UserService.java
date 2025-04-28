@@ -25,4 +25,11 @@ public class UserService {
        );
     }
 
+    public User updatePassword(Long id, String password) {
+        User user = findById(id);
+        user.setPassword(password);
+
+        return user;
+    }
+
 }
